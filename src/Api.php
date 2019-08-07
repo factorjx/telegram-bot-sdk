@@ -369,6 +369,20 @@ class Api
         return new Message($response->getDecodedBody());
     }
 
+    public function editMessageCaption(array $params)
+    {
+        $response = $this->post('editMessageCaption', $params);
+
+        return new Message($response->getDecodedBody());
+    }
+
+    public function editMessageReplyMarkup(array $params)
+    {
+        $response = $this->post('editMessageReplyMarkup', $params);
+
+        return new Message($response->getDecodedBody());
+    }
+
     /**
      * Send Photos.
      *
