@@ -334,6 +334,42 @@ class Api
     }
 
     /**
+     * Updating message text.
+     *
+     * <code>
+     * $params = [
+     *   'chat_id'                  => '',
+     *   'message_id'               => '',
+     *   'text'                     => '',
+     *   'parse_mode'               => '',
+     *   'disable_web_page_preview' => '',
+     *   'reply_to_message_id'      => '',
+     *   'reply_markup'             => '',
+     * ];
+     * </code>
+     *
+     * @link https://core.telegram.org/bots/api#editmessagetext
+     *
+     * @param array    $params
+     *
+     * @var int|string $params ['chat_id']
+     * @var int|string $params ['message_id']
+     * @var string     $params ['text']
+     * @var string     $params ['parse_mode']
+     * @var bool       $params ['disable_web_page_preview']
+     * @var int        $params ['reply_to_message_id']
+     * @var string     $params ['reply_markup']
+     *
+     * @return Message
+     */
+    public function editMessageText(array $params)
+    {
+        $response = $this->post('editMessageText', $params);
+
+        return new Message($response->getDecodedBody());
+    }
+
+    /**
      * Send Photos.
      *
      * <code>
