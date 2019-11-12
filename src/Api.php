@@ -764,6 +764,16 @@ class Api
     }
 
     /**
+     * Get info about current webhook
+     *
+     * @return TelegramResponse
+     */
+    public function webhookInfo()
+    {
+        return $this->post('getWebhookInfo');
+    }
+
+    /**
      * Use this method to receive incoming updates using long polling.
      *
      * <code>
